@@ -8,7 +8,6 @@ export const Container = styled.div<IContainerStyle>`
   align-items: center;
   justify-content: ${({ sizeElements }) => ( sizeElements > 1 ? 'space-evenly' : 'center' )};
   padding: 1rem;
-  width: 100%;
   flex-wrap: wrap;
 
   .button {

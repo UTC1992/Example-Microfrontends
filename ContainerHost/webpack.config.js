@@ -49,6 +49,7 @@ module.exports = {
       filename: "remoteEntry.js",
       remotes: {
         Layout: "Layout@http://localhost:3001/remoteEntry.js",
+        ListData: 'ListData@http://localhost:3002/remoteEntry.js',
         Languages: 'Languages@http://localhost:3003/remoteEntry.js',
       },
       exposes: {},

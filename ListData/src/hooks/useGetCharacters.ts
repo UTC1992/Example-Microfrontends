@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import { ShowType } from '../components/ListIntegrated/types'
+import { ShowType } from '../components/ListCharacters/types'
 
 import { getCharacters } from '../services/getCharacters'
 import { ItemDto } from '../services/ItemDto'

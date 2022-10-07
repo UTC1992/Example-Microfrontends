@@ -7,7 +7,9 @@ interface IHeaderProps {
 }
 
 const Header: React.FC<IHeaderProps> = ({ title }) => (
-  <HeaderStyle>{title}</HeaderStyle>
+  <HeaderStyle className="header">
+    <h2 className="header__title">{title}</h2>
+  </HeaderStyle>
 )
 
 export default Header

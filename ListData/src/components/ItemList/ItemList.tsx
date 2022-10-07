@@ -10,7 +10,7 @@ interface IItemListProps {
 const ItemList:React.FC<IItemListProps> = ({ text, image }) => (
   <ItemListStyle aria-label="item-list" className="item-list">
     <span className="item-list__title">{text}</span>
-    <img className="item-list__image" src={image} alt="" />
+    <img className="item-list__image item-list__image--rounded" src={image} alt="" />
   </ItemListStyle>
 )
 

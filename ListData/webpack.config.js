@@ -47,10 +47,10 @@ module.exports = {
     new ModuleFederationPlugin({
       name: "ListData",
       filename: "remoteEntry.js",
-      remotes: {
-      
+      remotes: {},
+      exposes: {
+        './ListCharacters': './src/components/ListCharacters/ListCharacters'
       },
-      exposes: {},
       shared: {
         ...deps,
         react: {

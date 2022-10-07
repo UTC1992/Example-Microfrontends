@@ -8,7 +8,7 @@ import Button from '../Button/Button'
 import ItemList from '../ItemList/ItemList'
 import List from '../List/List'
 
-const ListIntegrated:React.FC = () => {
+const ListCharacters:React.FC = () => {
   const { itemsList, handleGetData } = useGetCharacters()
 
   const renderItems = (): JSX.Element[] => (
@@ -38,4 +38,4 @@ const ListIntegrated:React.FC = () => {
   )
 }
 
-export default ListIntegrated
+export default ListCharacters

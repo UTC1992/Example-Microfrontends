@@ -2,11 +2,11 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 
 import './index.css'
-import ListIntegrated from './components/ListIntegrated/ListIntegrated'
+import ListCharacters from './components/ListCharacters/ListCharacters'
 
 const App: React.FC = () => (
   <div className="container container--column">
-    <ListIntegrated />
+    <ListCharacters />
   </div>
 )
 

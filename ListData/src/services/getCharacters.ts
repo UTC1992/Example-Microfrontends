@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-import { ShowType } from 'src/components/ListIntegrated/types'
+import { ShowType } from 'src/components/ListCharacters/types'
 
 import { ItemDto } from './ItemDto'
 
