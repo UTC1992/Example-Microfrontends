@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 
 interface IButtonProps {
-  children: JSX.Element | string
+  children: ReactNode
   handleOnClick?: () => void
 }
 

@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 
 import { ListStyle } from './styles'
 
 interface IListProps {
-  children: JSX.Element[]
+  children: ReactNode
 }
 
 const List: React.FC<IListProps> = ({ children }) => (
