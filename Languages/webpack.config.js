@@ -1,5 +1,10 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
+const { HotModuleReplacementPlugin } = require('webpack');
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
+const ESLintPlugin = require("eslint-webpack-plugin");
+
 
 const deps = require("./package.json").dependencies;
 module.exports = {
@@ -47,7 +52,7 @@ module.exports = {
       filename: "remoteEntry.js",
       remotes: {},
       exposes: {
-        './App': './src/App'
+        './ListLanguages': './src/components/ListLanguages/ListLanguages'
       },
       shared: {
         ...deps,
@@ -60,6 +65,14 @@ module.exports = {
           requiredVersion: deps["react-dom"],
         },
       },
+    }),
+    new HotModuleReplacementPlugin(),
+    new ReactRefreshWebpackPlugin(),
+    new ForkTsCheckerWebpackPlugin({
+      async: false
+    }),
+    new ESLintPlugin({
+      extensions: ["js", "jsx", "ts", "tsx"],
     }),
     new HtmlWebPackPlugin({
       template: "./src/index.html",

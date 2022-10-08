@@ -23,3 +23,9 @@ declare module "ListData/ListCharacters" {
 
 	export default ListCharacters;
 }
+
+declare module "Languages/ListLanguages" {
+	const ListLanguages: React.ComponentType<{languages: string[], handleOnClick?: () => void }>;
+
+	export default ListLanguages;
+}

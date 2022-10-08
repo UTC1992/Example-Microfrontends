@@ -7,10 +7,15 @@ const Header = React.lazy(() => import("Layout/Header"));
 const Content = React.lazy(() => import("Layout/Content"));
 const Footer = React.lazy(() => import("Layout/Footer"));
 const ListCharacters = React.lazy(() => import("ListData/ListCharacters"));
+const ListLanguages = React.lazy(() => import("Languages/ListLanguages"));
+
 
 const App = () => (
   <div className="container">
     <Header title="Super challenge"/>
+    <div className="card-lang">
+    <ListLanguages languages={["EN", "ES"]}/>
+    </div>
     <Content>
       <ListCharacters />
     </Content>
