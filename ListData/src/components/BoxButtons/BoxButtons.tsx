@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 
 import { Container } from './styles'
 
 interface IBoxButtonsProps {
-  children: JSX.Element | JSX.Element[]
+  children: ReactNode
 }
 
 const BoxButtons:React.FC<IBoxButtonsProps> = ({ children }) => {

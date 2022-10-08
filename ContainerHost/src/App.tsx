@@ -1,27 +1,26 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
+import React from 'react'
+import ReactDOM from 'react-dom/client'
 
-import "./index.css";
+import './index.css'
 
-const Header = React.lazy(() => import("Layout/Header"));
-const Content = React.lazy(() => import("Layout/Content"));
-const Footer = React.lazy(() => import("Layout/Footer"));
-const ListCharacters = React.lazy(() => import("ListData/ListCharacters"));
-const ListLanguages = React.lazy(() => import("Languages/ListLanguages"));
+const Header = React.lazy(() => import( 'Layout/Header' ))
+const Content = React.lazy(() => import( 'Layout/Content' ))
+const Footer = React.lazy(() => import( 'Layout/Footer' ))
+const ListCharacters = React.lazy(() => import( 'ListData/ListCharacters' ))
+const ListLanguages = React.lazy(() => import( 'Languages/ListLanguages' ))
 
-
-const App = () => (
+const App: React.FC = () => (
   <div className="container">
-    <Header title="Super challenge"/>
+    <Header title="Super challenge" />
     <div className="card-lang">
-    <ListLanguages languages={["EN", "ES"]}/>
+      <ListLanguages languages={['EN', 'ES']} />
     </div>
     <Content>
       <ListCharacters />
     </Content>
-    <Footer title="Super challenge"/>
+    <Footer title="Super challenge" />
   </div>
-);
+)
 
 const container = document.getElementById( 'app' )
 const root = ReactDOM.createRoot( container as HTMLElement )
@@ -31,4 +30,3 @@ root.render(
     <App />
   </React.StrictMode>,
 )
-

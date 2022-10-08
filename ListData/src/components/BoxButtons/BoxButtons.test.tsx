@@ -61,6 +61,6 @@ describe( 'Text BoxButtons', () => {
       </BoxButtons>,
     )
 
-    expect( getByLabelText( 'container-button' )).toHaveStyle({ padding: '1rem', width: '100%', flexWrap: 'wrap' })
+    expect( getByLabelText( 'container-button' )).toHaveStyle({ padding: '1rem', flexWrap: 'wrap' })
   })
 })
