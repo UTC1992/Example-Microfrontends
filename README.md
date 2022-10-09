@@ -1,5 +1,10 @@
 # Microfrontends
- Test to Microfontends
+  -  The project help to show characters with their images
+  -  Use 3 projects:
+     -  Layout: Header, Footer and Content
+     -  ListData: BoxButtons and ListData (list items with name and image)
+     -  Languages: Box with buttons to use to change Language in app
+     -  ContainerHost: Join projects
  
 # Steps to run
   -  cd Layout
