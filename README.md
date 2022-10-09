@@ -1,4 +1,4 @@
-# 1.-Microfrontends
+# Microfrontends
  Test to Microfontends
  
 # Steps to run
