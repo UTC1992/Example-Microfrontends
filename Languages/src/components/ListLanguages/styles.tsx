@@ -6,15 +6,13 @@ export const ListStyles = styled.ul`
   justify-content: space-evenly;
   align-items: center;
   row-gap: 0.5rem;
-  border: 1px solid #000000;
+  border: 1px solid #1366AF;
   border-radius: 0.5rem;
   padding: 0.5rem;
   max-width: 5rem;
 
   .list__item {
     all: unset;
-    border: 1px solid #000000;
-    border-radius: 0.5rem;
     width: 100%;
   }
 
@@ -28,8 +26,18 @@ export const ListStyles = styled.ul`
     align-items: center;
   }
 
-  .list__item:hover {
-    background-color: #000000;
+  .list__item-button:hover {
+    background-color: #1366AF;
     color: #ffffff;
+  }
+
+  .list__item-button--active {
+    background-color: #1366AF;
+    color: #ffffff;
+  }
+
+  .list__item-button--rounded {
+    border-radius: 0.5rem;
+    border: 1px solid #1366AF;
   }
 `

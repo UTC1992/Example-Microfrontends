@@ -3,13 +3,13 @@
   margin: 0px;
 }
 
-.container {
-  font-family: Helvetica, sans-serif;
-}
-
 .card-lang {
   position: sticky;
   top: 10rem;
-  left: 2rem;
+  left: 1rem;
   width: 5rem;
+}
+
+.card-list-data {
+  margin: 0px 20%;
 }

@@ -6,18 +6,18 @@ import axios from 'axios'
 
 import ListCharacters from './ListCharacters'
 
-import { useGetCharacters } from '../../hooks/useGetCharacters'
+import useGetCharacters from '../../hooks/useGetCharacters'
 
 const responseAxios = {
   data: {
     results: [
       {
-        name: 'Joe Doe',
-        image: 'image.jpg',
+        name: 'Joe Doe 1',
+        image: 'image1.jpg',
       },
       {
-        name: 'Jane Doe',
-        image: 'image.jpg',
+        name: 'Jane Doe 2',
+        image: 'image2.jpg',
       },
     ],
   },
@@ -42,12 +42,12 @@ describe( 'Test to ListCharacters', () => {
     await waitFor(() => {
       expect( result.current.itemsList ).toEqual([
         {
-          name: 'Joe Doe',
-          image: 'image.jpg',
+          name: 'Joe Doe 1',
+          image: 'image1.jpg',
         },
         {
-          name: 'Jane Doe',
-          image: 'image.jpg',
+          name: 'Jane Doe 2',
+          image: 'image2.jpg',
         },
       ])
     })

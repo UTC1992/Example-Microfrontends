@@ -4,3 +4,8 @@ export interface IItem {
 }
 
 export type ShowType = 'Rick' | 'Harry'
+
+export interface IButton {
+  type: ShowType
+  active: boolean
+}

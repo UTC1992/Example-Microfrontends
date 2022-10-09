@@ -1,31 +1,22 @@
-///<reference types="react" />
+// /<reference types="react" />
 
-declare module "Layout/Header" {
-	const Header: React.ComponentType<{title: string}>;
+declare module 'Layout/Layout' {
+  const Layout: React.ComponentType<{children: any, lang?: string}>
 
-	export default Header;
+  export default Layout
 }
 
-declare module "Layout/Content" {
-	const Content: React.ComponentType<{children: JSX.Element}>;
+declare module 'ListData/ListCharacters' {
+  const ListCharacters: React.ComponentType<{lang?: string}>
 
-	export default Content;
+  export default ListCharacters
 }
 
-declare module "Layout/Footer" {
-	const Footer: React.ComponentType<{title: string}>;
+declare module 'Languages/ListLanguages' {
 
-	export default Footer;
-}
+  const ListLanguages: React.ComponentType<{
+    languages: string[],
+    getValueSelected?:( value: string ) => void }>
 
-declare module "ListData/ListCharacters" {
-	const ListCharacters: React.ComponentType;
-
-	export default ListCharacters;
-}
-
-declare module "Languages/ListLanguages" {
-	const ListLanguages: React.ComponentType<{languages: string[], handleOnClick?: () => void }>;
-
-	export default ListLanguages;
+  export default ListLanguages
 }

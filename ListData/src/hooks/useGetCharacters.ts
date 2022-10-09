@@ -6,19 +6,25 @@ import { getCharacters } from '../services/getCharacters'
 import { ItemDto } from '../services/ItemDto'
 
 interface IUserCharactersHook {
-  itemsList: ItemDto[]
+  itemsList?: ItemDto[]
   handleGetData: ( showType: ShowType ) => void
+  loading: boolean
 }
 
-export const useGetCharacters = (): IUserCharactersHook => {
-  const [itemsList, setItemsList] = useState<ItemDto[]>([])
+const useGetCharacters = (): IUserCharactersHook => {
+  const [itemsList, setItemsList] = useState<ItemDto[]>()
+  const [loading, setLoading] = useState<boolean>( false )
 
   const handleGetData = async ( showType: ShowType ): Promise<void> => {
     setItemsList([])
+    setLoading( true )
     const characters = await getCharacters( showType )
 
     setItemsList( characters.result ?? [])
+    setLoading( false )
   }
 
-  return { itemsList, handleGetData }
+  return { itemsList, handleGetData, loading }
 }
+
+export default useGetCharacters

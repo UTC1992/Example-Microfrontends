@@ -26,4 +26,17 @@ describe( 'Test to Button', () => {
     await userEvent.click( getByRole( 'button', { name: 'Press the button' }))
     expect( handleClick ).toHaveBeenCalledTimes( 1 )
   })
+
+  it( 'should have a color background when it received the prop active in true', async () => {
+    const handleClick = jest.fn()
+    const { getByRole } = render(
+      <Button handleOnClick={handleClick} active>
+        Press the button
+      </Button>,
+    )
+
+    expect( getByRole( 'button', { name: 'Press the button' })).toHaveStyle({
+      backgroundColor: '#0a62a5',
+    })
+  })
 })

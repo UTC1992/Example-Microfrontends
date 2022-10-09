@@ -4,9 +4,10 @@ import userEvent from '@testing-library/user-event'
 
 import ListLanguages from './ListLanguages'
 
+const languages: any = ['EN', 'ES']
+
 describe( 'Test to ListLanguages', () => {
   it( 'should render two items with ES and EN', async () => {
-    const languages = ['EN', 'ES']
     const { findAllByRole } = render(
       <ListLanguages languages={languages} />,
     )
@@ -14,19 +15,7 @@ describe( 'Test to ListLanguages', () => {
     expect( await findAllByRole( 'listitem' )).toHaveLength( 2 )
   })
 
-  it( 'should call function was sent when press button in someone', async () => {
-    const languages = ['EN', 'ES']
-    const handleClick = jest.fn()
-    const { getByText } = render(
-      <ListLanguages languages={languages} handleOnClick={handleClick} />,
-    )
-
-    await userEvent.click( getByText( 'ES' ))
-    expect( handleClick ).toHaveBeenCalledTimes( 1 )
-  })
-
   it( 'should be a list of elements', async () => {
-    const languages = ['EN', 'ES']
     const { getByRole } = render(
       <ListLanguages languages={languages} />,
     )
@@ -37,5 +26,39 @@ describe( 'Test to ListLanguages', () => {
       justifyContent: 'space-evenly',
       alignItems: 'center',
     })
+  })
+
+  it( 'should show the button with ES in color black when it was not sent any option', async () => {
+    const { getByText } = render(
+      <ListLanguages languages={languages} />,
+    )
+
+    expect( getByText( 'ES' )).toHaveStyle({
+      backgroundColor: '#000000',
+    })
+  })
+
+  it( 'should show the button with EN in color black when it was press the option', async () => {
+    const { getByText } = render(
+      <ListLanguages languages={languages} />,
+    )
+
+    await userEvent.click( getByText( 'EN' ))
+    expect( getByText( 'EN' )).toHaveStyle({
+      backgroundColor: '#000000',
+    })
+  })
+
+  it( 'should receive a function to set a value that was selected', async () => {
+    const handleSetValue = jest.fn(( value: any ) => value )
+    const { getByText } = render(
+      <ListLanguages languages={languages} getValueSelected={handleSetValue} />,
+    )
+
+    await userEvent.click( getByText( 'EN' ))
+    expect( handleSetValue ).toHaveBeenCalledWith( 'EN' )
+
+    await userEvent.click( getByText( 'ES' ))
+    expect( handleSetValue ).toHaveBeenCalledWith( 'ES' )
   })
 })

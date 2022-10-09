@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 
 import { ContentStyle } from './styles'
 
 interface IContentProps {
-  children: JSX.Element | JSX.Element[] | undefined | null
+  children: ReactNode
 }
 
 const Content: React.FC<IContentProps> = ({ children }) => (

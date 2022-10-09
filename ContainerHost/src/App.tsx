@@ -1,26 +1,32 @@
-import React from 'react'
+import React, { Suspense, useState } from 'react'
 import ReactDOM from 'react-dom/client'
 
 import './index.css'
 
-const Header = React.lazy(() => import( 'Layout/Header' ))
-const Content = React.lazy(() => import( 'Layout/Content' ))
-const Footer = React.lazy(() => import( 'Layout/Footer' ))
+const Layout = React.lazy(() => import( 'Layout/Layout' ))
 const ListCharacters = React.lazy(() => import( 'ListData/ListCharacters' ))
 const ListLanguages = React.lazy(() => import( 'Languages/ListLanguages' ))
 
-const App: React.FC = () => (
-  <div className="container">
-    <Header title="Super challenge" />
-    <div className="card-lang">
-      <ListLanguages languages={['EN', 'ES']} />
-    </div>
-    <Content>
-      <ListCharacters />
-    </Content>
-    <Footer title="Super challenge" />
-  </div>
-)
+const App: React.FC = () => {
+  const [lang, setLang] = useState<string>( 'ES' )
+
+  const handleSetChange = ( value: string ): void => {
+    setLang( value )
+  }
+
+  return (
+    <Suspense fallback="Loading...">
+      <Layout lang={lang}>
+        <div className="card-lang">
+          <ListLanguages languages={['EN', 'ES']} getValueSelected={handleSetChange} />
+        </div>
+        <div className="card-list-data">
+          <ListCharacters lang={lang} />
+        </div>
+      </Layout>
+    </Suspense>
+  )
+}
 
 const container = document.getElementById( 'app' )
 const root = ReactDOM.createRoot( container as HTMLElement )
