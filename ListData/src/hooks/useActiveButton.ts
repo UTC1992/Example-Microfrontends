@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react'
+import { useState } from 'react'
 
 import { IButton } from 'src/components/ListCharacters/types'
 
@@ -25,9 +25,8 @@ const useActiveButton = ( listButton: IButton[]): IActiveButtonHook => {
     return buttons
   }
 
-  const handleSetBtnList = useCallback(( list: IButton[]): void =>
-    setBtnList( list ),
-  [])
+  const handleSetBtnList = ( list: IButton[]): void =>
+    setBtnList( list )
 
   return {
     btnList,

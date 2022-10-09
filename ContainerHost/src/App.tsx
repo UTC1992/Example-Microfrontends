@@ -1,4 +1,4 @@
-import React, { Suspense, useState } from 'react'
+import React, { useState } from 'react'
 import ReactDOM from 'react-dom/client'
 
 import './index.css'
@@ -15,7 +15,7 @@ const App: React.FC = () => {
   }
 
   return (
-    <Suspense fallback="Loading...">
+    <>
       <Layout lang={lang}>
         <div className="card-lang">
           <ListLanguages languages={['EN', 'ES']} getValueSelected={handleSetChange} />
@@ -24,7 +24,7 @@ const App: React.FC = () => {
           <ListCharacters lang={lang} />
         </div>
       </Layout>
-    </Suspense>
+    </>
   )
 }
 
