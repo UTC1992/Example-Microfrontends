@@ -15,16 +15,14 @@ const App: React.FC = () => {
   }
 
   return (
-    <>
-      <Layout lang={lang}>
-        <div className="card-lang">
-          <ListLanguages languages={['EN', 'ES']} getValueSelected={handleSetChange} />
-        </div>
-        <div className="card-list-data">
-          <ListCharacters lang={lang} />
-        </div>
-      </Layout>
-    </>
+    <Layout lang={lang}>
+      <div className="card-lang">
+        <ListLanguages languages={['EN', 'ES']} getValueSelected={handleSetChange} />
+      </div>
+      <div className="card-list-data">
+        <ListCharacters lang={lang} />
+      </div>
+    </Layout>
   )
 }
 
