@@ -12,7 +12,6 @@ const Button:
 React.FC<IButtonProps> = ({ children, handleOnClick, active }) => (
   <ButtonStyle
     active={active ? 1 : 0}
-    className={`button button--size ${active ? 'button--active' : ''}`}
     type="button"
     onClick={handleOnClick}
   >
