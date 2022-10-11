@@ -1,5 +1,6 @@
 # Microfrontends
   -  The project help to show characters with their images
+  -  The project uses the rick & morty and harry potter API
   -  Use 3 projects:
      -  Layout: Header, Footer and Content
      -  ListData: BoxButtons and ListData (list items with name and image)
